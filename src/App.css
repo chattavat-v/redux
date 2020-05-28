@@ -36,3 +36,85 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper-header h4 {
+  margin: 0;
+}
+
+button {
+  margin: auto 2rem;
+  padding: .5rem 2rem;
+  border-radius: 25px;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+}
+
+button:focus {
+  outline: none;
+}
+
+.wrapper-body {
+  margin: auto 2rem;
+  margin-top: 2rem;
+}
+
+.wrapper-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.card_area {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 20%;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.wrapper-form {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: auto;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper-form h4 {
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 25%;
+  border-radius: 5px;
+  border: none;
+  line-height: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  margin: auto 2rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper-card {
+    display: block;
+  }
+
+  .card_area {
+    width: auto;
+  }
+}
