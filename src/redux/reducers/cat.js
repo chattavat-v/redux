@@ -1,4 +1,4 @@
-import { FETCH_CATS, ADD_CAT, ERROR_CAT } from "../types/cat";
+import { FETCH_CATS, ADD_CAT, ERROR_CAT, DELETE_CAT } from "../types/cat";
 
 const initialState = {
 	cats: null,
@@ -20,6 +20,11 @@ export default (state = initialState, action) => {
 				...state,
 				cats: state.cats,
 			};
+		case DELETE_CAT:
+			return {
+				...state,
+				cats: state.cats.filter(cat => cat.id !== payload)
+			}
 		case ERROR_CAT:
 			return {
 				...state,

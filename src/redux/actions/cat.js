@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_CATS, ADD_CAT, ERROR_CAT } from "../types/cat";
+import { FETCH_CATS, ADD_CAT, ERROR_CAT, DELETE_CAT } from "../types/cat";
 
 export const fetchCats = () => async (dispatch) => {
 	try {
@@ -35,6 +35,24 @@ export const addCats = (formData) => async (dispatch) => {
 		});
 
 		dispatch(fetchCats());
+	} catch (err) {
+		let error = err.response.data;
+
+		dispatch({
+			type: ERROR_CAT,
+			payload: error,
+		});
+	}
+};
+
+export const deleteCatById = (id) => async (dispatch) => {
+	try {
+		let response = await axios.delete(`http://localhost:9120/cats/${id}`);
+
+		dispatch({
+			type: DELETE_CAT,
+			payload: id,
+		});
 	} catch (err) {
 		let error = err.response.data;
 
